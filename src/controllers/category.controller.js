@@ -1,3 +1,4 @@
+const Category = require("../models/category")
 const { categoryService } = require("../services");
 
 // create category
@@ -5,7 +6,7 @@ const createCategory = async (req,res) => {
     try {
         const reqBody = req.body;
 
-        const category = await userService.createCategory(reqBody);
+        const category = await categoryService.createCategory(reqBody);
 
         res.status(200).json({
             success: true,
@@ -21,7 +22,7 @@ const createCategory = async (req,res) => {
 const getCategoryList = async(req, res) => {
     try {
 
-        const getList = await userService.getCategoryList(reqBody);
+        const getList = await categoryService.getCategoryList(reqBody);
 
         res.status(200).json({
             success: true,

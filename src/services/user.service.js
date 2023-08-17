@@ -6,7 +6,7 @@ const createUser = async (reqBody) => {
 };
 
 // Get user list
-const getUserList = async (req, res) => {
+const getUserList = async (reqBody) => {
     return User.find()
 }
 
