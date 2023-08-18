@@ -1,5 +1,4 @@
 const Joi = require("joi");
-const { createUser } = require("../services/user.service");
 
 // create user
 const createUser = {
