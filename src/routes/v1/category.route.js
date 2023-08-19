@@ -15,7 +15,7 @@ router.post(
 // Get category list
   router.get(
     "/list",
-    validate(categoryValidation.getCategoryList),
+    // validate(categoryValidation.getCategoryList),
     categoryController.getCategoryList
   );
 

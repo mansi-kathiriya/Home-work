@@ -1,16 +1,15 @@
-const Category = require("../models/category")
-const { categoryService } = require("../services");
+const { bookService } = require("../services");
 
 // create category
-const createCategory = async (req,res) => {
+const createBookRecord = async (req,res) => {
     try {
         const reqBody = req.body;
 
-        const category = await categoryService.createCategory(reqBody);
+        const category = await bookService.createBook(reqBody);
 
         res.status(200).json({
             success: true,
-            message: "category create successfully!",
+            message: "Book create successfully!",
             data: { category }
         });
     } catch (error) {
@@ -19,12 +18,12 @@ const createCategory = async (req,res) => {
 };
 
 //  Get user list
-const getCategoryList = async(req, res) => {
+const getBooksList = async(req, res) => {
     try {
-        const getList = await categoryService.getCategoryList();
+        const getList = await bookService.getBookList();
         res.status(200).json({
             success: true,
-            message: "Get category list successfully!",
+            message: "Get Book list successfully!",
             data: getList,
         });
     } catch (error) {
@@ -33,6 +32,6 @@ const getCategoryList = async(req, res) => {
 };
 
 module.exports = {
-    createCategory,
-    getCategoryList,
+    createBookRecord,
+    getBooksList,
 };

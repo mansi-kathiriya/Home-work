@@ -1,14 +1,14 @@
-const { Category } = require("../models");
+const { category } = require("../models");
 
 
 //  Create user
  
 const createCategory = async (reqBody) => {
-  return Category.create(reqBody);
+  return category.create(reqBody);
 };
 
 const getCategoryList = async (filter, options) => {
-  return Category.find()
+  return category.find()
 };
 
 module.exports = {
