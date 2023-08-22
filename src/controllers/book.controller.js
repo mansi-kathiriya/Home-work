@@ -5,12 +5,12 @@ const createBookRecord = async (req,res) => {
     try {
         const reqBody = req.body;
 
-        const category = await bookService.createBook(reqBody);
+        const book = await bookService.createBook(reqBody);
 
         res.status(200).json({
             success: true,
             message: "Book create successfully!",
-            data: { category }
+            data: { book }
         });
     } catch (error) {
         res.status(400).json({ success:false, message: error.message })
