@@ -1,4 +1,4 @@
-module.exports.category = require("./category");
-module.exports.user = require("./user");
-module.exports.product = require("./product");
-module.exports.book = require("./book");
+module.exports.Category = require("./category.model");
+module.exports.User = require("./user.model");
+module.exports.Product = require("./product.model");
+module.exports.Book = require("./book.model");
