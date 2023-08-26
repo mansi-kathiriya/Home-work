@@ -1,8 +1,8 @@
-const book = require("../models/book");
+const { book } = require("../models");
 
 
 //  Create user
- 
+
 const createBook = async (reqBody) => {
   return book.create(reqBody);
 };
