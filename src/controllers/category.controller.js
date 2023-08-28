@@ -1,24 +1,26 @@
 const { categoryService } = require("../services");
 
 // create category
-const createCategory = async (req,res) => {
+const createCategory = async (req, res) => {
     try {
         const reqBody = req.body;
+        // console.log(reqBody);
+        console.log(req.body);
 
-        const category = await categoryService.createCategory(reqBody);
+        const Category = await categoryService.createCategory(reqBody);
 
         res.status(200).json({
             success: true,
             message: "category create successfully!",
-            data: { category }
+            data: { Category }
         });
     } catch (error) {
-        res.status(400).json({ success:false, message: error.message })
+        res.status(400).json({ success: false, message: error.message })
     }
 };
 
 //  Get user list
-const getCategoryList = async(req, res) => {
+const getCategoryList = async (req, res) => {
     try {
         const getList = await categoryService.getCategoryList();
         res.status(200).json({
@@ -27,7 +29,7 @@ const getCategoryList = async(req, res) => {
             data: getList,
         });
     } catch (error) {
-        res.status(400).json({ success:false, message: error.message })
+        res.status(400).json({ success: false, message: error.message })
     }
 };
 
