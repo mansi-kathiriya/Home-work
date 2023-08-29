@@ -1,30 +1,30 @@
-const { book } = require("../models");
+const { Book } = require("../models");
 
 
 //  Create book
 
 const createBook = async (reqBody) => {
-  return book.create(reqBody);
+  return Book.create(reqBody);
 };
 
 const getBookList = async (filter, options) => {
-  return book.find()
+  return Book.find()
 };
 
 const getBookById = async(bookId) => {
-  return book.findById(bookId);
+  return Book.findById(bookId);
 }
 
 const updateDetails = async(bookId, updateBody) => {
-  return book.findByIdAndUpdate(bookId, { $set: updateBody });
+  return Book.findByIdAndUpdate(bookId, { $set: updateBody });
 }
 
 const deleteBook = async (bookId) => {
-  return book.findByIdAndDelete(bookId);
+  return Book.findByIdAndDelete(bookId);
 }
 
 const getBookByName = async (book_name) => {
-  return book.findOne({ book_name })
+  return Book.findOne({ book_name })
 };
 
 module.exports = {
