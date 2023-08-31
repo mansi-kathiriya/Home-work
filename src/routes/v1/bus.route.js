@@ -5,34 +5,34 @@ const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
-// create category
+// create Bus
 router.post(
-  "/create-category",
-  validate(busValidation.createCategory),
-  busController.createCategory
+  "/create-bus",
+  validate(busValidation.createBus),
+  busController.createBus
 );
 
-// Get category list
+// Get Bus list
 router.get(
-  "/list",
-  busController.getCategoryList
+  "/bus-list",
+  busController.getBusList
 );
 
-// get category details by id
+// get Bus details by id
 router.get(
-  "/get-details/:categoryId",
-  busController.getCategoryDetails
+  "/get-details/:busId",
+  busController.getBusDetails
 )
 
-// update category
+// update Bus
 router.put(
-  "/update/:categoryId",
-  busController.updateCategory
+  "/update-bus/:busId",
+  busController.updateBus
 )
 
-// delete category
+// delete Bus
 router.delete(
-  "/delete/:categoryId",
+  "/delete-bus/:busId",
   busController.deleteRecord
 )
 
