@@ -5,14 +5,14 @@ const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
-// create user
+// create book
 router.post(
   "/create-book",
   validate(bookValidation.createBook),
   bookController.createBookRecord
 );
 
-// Get user list
+// Get book list
 router.get(
   "/list",
   bookController.getBooksList
@@ -24,13 +24,13 @@ router.get(
   bookController.getBookDetails
 )
 
-// update category
+// update book
 router.put(
   "/update-book/:bookId",
   bookController.updateBook
 )
 
-// delete category
+// delete book
 router.delete(
   "/delete-book/:bookId",
   bookController.deleteRecord
