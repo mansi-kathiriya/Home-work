@@ -6,3 +6,4 @@ module.exports.busController = require("./bus.cantroller");
 module.exports.stationaryController = require("./stationary.controller");
 module.exports.schoolController = require("./school.controller");
 module.exports.travelController = require("./travel.cantroller");
+module.exports.pharmacyController = require("./pharmacy.cantroller");

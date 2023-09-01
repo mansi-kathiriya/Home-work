@@ -7,3 +7,4 @@ module.exports.Bus = require("./bus.model");
 module.exports.Stationary = require("./stationary.model");
 module.exports.School = require("./school.model");
 module.exports.Travel = require("./travel.model");
+module.exports.Pharmacy = require("./pharmacy.model");

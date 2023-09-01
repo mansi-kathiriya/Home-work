@@ -6,3 +6,4 @@ module.exports.busService = require("./bus.service");
 module.exports.stationaryService = require("./stationary.service");
 module.exports.schoolService = require("./school.service");
 module.exports.travelService = require("./travel.service");
+module.exports.pharmacyService = require("./pharmacy.service");

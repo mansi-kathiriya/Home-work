@@ -8,6 +8,7 @@ const busRoute = require("./bus.route");
 const stationaryRoute = require("./stationary.route");
 const schoolRoute = require("./school.route");
 const travelRoute = require("./travel.route");
+const pharmacyRoute = require("./pharmacy.route");
 
 const router = express.Router();
 
@@ -19,6 +20,7 @@ router.use("/bus", busRoute);
 router.use("/stationary", stationaryRoute);
 router.use("/school", schoolRoute);
 router.use("/travel", travelRoute);
+router.use("/pharmacy", pharmacyRoute);
 
 module.exports = router;
 
