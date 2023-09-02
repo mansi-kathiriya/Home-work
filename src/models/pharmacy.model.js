@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const schoolSchema = new mongoose.Schema(
+const pharmacySchema = new mongoose.Schema(
     {
         medication_name: {
             type: String,
@@ -29,6 +29,6 @@ const schoolSchema = new mongoose.Schema(
     }
 );
 
-const school = mongoose.model("school",schoolSchema);
+const Pharmacy = mongoose.model("pharmacy",pharmacySchema);
 
-module.exports = school;
+module.exports = Pharmacy;
