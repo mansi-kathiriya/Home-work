@@ -10,3 +10,4 @@ module.exports.Travel = require("./travel.model");
 module.exports.Jewellery= require("./jewellery.model");
 module.exports.Movie= require("./movie.model");
 module.exports.Music= require("./music.model");
+module.exports.Grocery= require("./grocery.model");
