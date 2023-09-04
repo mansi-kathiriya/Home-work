@@ -6,7 +6,7 @@ const pharmacySchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
-        Description: {
+        description: {
             type: String,
             trim: true,
         },

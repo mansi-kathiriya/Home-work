@@ -8,3 +8,4 @@ module.exports.schoolValidation = require("./school.validation");
 module.exports.travelValidation = require("./travel.validation");
 module.exports.pharmacyValidation = require("./pharmacy.validation");
 module.exports.jewelleryValidation = require("./jewellery.validation");
+module.exports.movieValidation = require("./movie.validation");

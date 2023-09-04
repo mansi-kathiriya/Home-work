@@ -8,3 +8,4 @@ module.exports.Stationary = require("./stationary.model");
 module.exports.School = require("./school.model");
 module.exports.Travel = require("./travel.model");
 module.exports.Jewellery= require("./jewellery.model");
+module.exports.Movie= require("./movie.model");
