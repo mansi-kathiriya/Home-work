@@ -1,15 +1,15 @@
 const Joi = require("joi");
 
-// create Pharmacy
-const createPharmacy = {
+// create jewellery
+const createJewellery = {
     body: Joi.object().keys({
-        medication_name: Joi.string().required().trim(),
+        jewellery_name: Joi.string().required().trim(),
+        jewellery_material: Joi.string().required().trim(),
         Description: Joi.string().required().trim(),
-        quantity: Joi.number().integer(),
-        price: Joi.number().integer(),
+        price: Joi.number().integer().required(),
     }),
 };
 
 module.exports = {
-    createPharmacy
+    createJewellery
 };
