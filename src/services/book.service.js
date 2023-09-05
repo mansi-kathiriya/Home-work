@@ -8,7 +8,7 @@ const createBook = async (reqBody) => {
 };
 
 const getBookList = async (filter, options) => {
-  return Book.find()
+  return Book.find({$or : [{is_active: true}]});
 };
 
 const getBookById = async(bookId) => {

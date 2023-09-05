@@ -20,7 +20,7 @@ router.get(
 
 // get stationary details by id
 router.get(
-  "/get-stationary-details/:stationaryId",
+  "/get-details/:stationaryId",
   stationaryController.getStationaryDetails
 )
 
