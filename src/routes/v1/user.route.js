@@ -20,19 +20,19 @@ router.get(
 
 // get User details by id
 router.get(
-  "/get-details/:UserId",
+  "/get-details/:userId",
   userController.getUserDetails
 )
 
 // update User
 router.put(
-  "/update-user/:UserId",
+  "/update-user/:userId",
   userController.updateUser
 )
 
 // delete User
 router.delete(
-  "/delete-user/:UserId",
+  "/delete-user/:userId",
   userController.deleteRecord
 )
 
