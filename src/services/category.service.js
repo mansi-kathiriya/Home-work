@@ -5,7 +5,7 @@ const createCategory = async (reqBody) => {
 };
 
 const getCategoryList = async (filter, options) => {
-  return Category.find()
+  return Category.find({$or : [{ is_active: true }]})
 };
 
 const getCategoryById = async(categoryId) => {

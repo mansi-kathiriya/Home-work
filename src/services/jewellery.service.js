@@ -8,7 +8,7 @@ const createJewellery = async (reqBody) => {
 };
 
 const getJewelleryList = async (filter, options) => {
-  return Jewellery.find()
+  return Jewellery.find({$or : [{ price: 100000 ,is_active: false }]})
 };
 
 const getJewelleryById = async(jewelleryId) => {

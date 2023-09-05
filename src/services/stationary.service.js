@@ -5,7 +5,7 @@ const createStationary = async (reqBody) => {
 };
 
 const getStationaryList = async (filter, options) => {
-  return Stationary.find()
+  return Stationary.find({$or : [{ is_active: true }]})
 };
 
 const getStationaryById = async(stationaryId) => {

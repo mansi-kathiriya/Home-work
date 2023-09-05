@@ -8,7 +8,7 @@ const createSchool = async (reqBody) => {
 };
 
 const getSchoolList = async (filter, options) => {
-  return School.find()
+  return School.find({$or : [{ is_active: true }]})
 };
 
 const getSchoolById = async(schoolId) => {

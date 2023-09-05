@@ -5,7 +5,7 @@ const createHotal = async (reqBody) => {
 };
 
 const getHotalList = async (filter, options) => {
-  return Hotal.find()
+  return Hotal.find({$or : [{ is_active: true }]})
 };
 
 const getHotalById = async(hotalId) => {
