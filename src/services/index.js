@@ -12,3 +12,4 @@ module.exports.movieService = require("./movie.service");
 module.exports.musicService = require("./music.service");
 module.exports.groceryService = require("./grocery.service");
 module.exports.productService = require("./product.service");
+module.exports.studentService = require("./student.service");

@@ -9,6 +9,7 @@ const createSchool = async (reqBody) => {
 
 const getSchoolList = async (filter, options) => {
   return School.find({$or : [{ is_active: true }]})
+  .populate("student")
 };
 
 const getSchoolById = async(schoolId) => {
