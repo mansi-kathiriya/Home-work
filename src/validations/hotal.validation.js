@@ -9,6 +9,7 @@ const createHotal = {
         contact_number: Joi.number().integer().required(),
         room_no: Joi.number().integer().required(),
         room_type: Joi.string().required().trim(),
+        bus: Joi.string().required().trim(),
     }),
 };
 

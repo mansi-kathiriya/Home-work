@@ -8,6 +8,7 @@ const createTravel = {
         email: Joi.string().required().trim(),
         country_address: Joi.string().required().trim(),
         payment: Joi.number().integer().required(),
+        bus: Joi.string().required().trim(),
     }),
 };
 

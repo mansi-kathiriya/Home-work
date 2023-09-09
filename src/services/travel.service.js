@@ -6,6 +6,7 @@ const createTravel = async (reqBody) => {
 
 const getTravelList = async (filter, options) => {
   return Travel.find({$or : [{ is_active: true }]})
+  .populate("bus")
 };
 
 const getTravelById = async(travelId) => {

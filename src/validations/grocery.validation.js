@@ -8,6 +8,7 @@ const createHotal = {
         brand: Joi.string().required().trim(),
         price: Joi.number().integer().required(),
         quantity: Joi.number().integer().required(),
+        product: Joi.string().required().trim(),
     }),
 };
 

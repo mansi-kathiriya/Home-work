@@ -1,16 +1,15 @@
 const Joi = require("joi");
 
-// create Movie
-const createMovie = {
+// create Pharmacy
+const createPharmacy = {
     body: Joi.object().keys({
-        movie_name: Joi.string().required().trim(),
-        director_name: Joi.string().required().trim(),
-        actor_name: Joi.string().required().trim(),
-        language: Joi.string().required().trim(),
-        movie_type: Joi.string().required().trim(),
+        medication_name: Joi.string().required().trim(),
+        description: Joi.string().required().trim(),
+        quantity: Joi.number().integer().trim(),
+        price: Joi.number().integer().trim(),
     }),
 };
 
 module.exports = {
-    createMovie
+    createPharmacy
 };

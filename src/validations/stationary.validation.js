@@ -8,6 +8,7 @@ const createStationary = {
         category: Joi.string().required().trim(),
         quantity: Joi.number().integer().required(),
         price: Joi.number().integer().required(),
+        book: Joi.string().required().trim(),
     }),
 };
 

@@ -26,6 +26,10 @@ const hotalSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
+        bus: {
+            type: mongoose.Types.ObjectId,
+            ref: "bus"
+        },
         is_active: {
             type: Boolean,
             default: true,

@@ -5,14 +5,15 @@ const createStationary = async (reqBody) => {
 };
 
 const getStationaryList = async (filter, options) => {
-  return Stationary.find({$or : [{ is_active: true }]})
+  return Stationary.find({ $or: [{ is_active: true }] })
+  .populate("book");
 };
 
-const getStationaryById = async(stationaryId) => {
+const getStationaryById = async (stationaryId) => {
   return Stationary.findById(stationaryId);
 }
 
-const updateDetails = async(stationaryId, updateBody) => {
+const updateDetails = async (stationaryId, updateBody) => {
   return Stationary.findByIdAndUpdate(stationaryId, { $set: updateBody });
 }
 

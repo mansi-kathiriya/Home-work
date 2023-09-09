@@ -6,6 +6,7 @@ const createHotal = async (reqBody) => {
 
 const getHotalList = async (filter, options) => {
   return Hotal.find({$or : [{ is_active: true }]})
+  .populate("bus");
 };
 
 const getHotalById = async(hotalId) => {

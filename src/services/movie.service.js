@@ -1,6 +1,5 @@
 const { Movie } = require("../models");
 
-
 //  Create Movie
 
 const createMovie = async (reqBody) => {
@@ -9,6 +8,7 @@ const createMovie = async (reqBody) => {
 
 const getMovieList = async (filter, options) => {
   return Movie.find({$or : [{ is_active: true }]})
+  .populate("music")
 };
 
 const getMovieById = async(movieId) => {
