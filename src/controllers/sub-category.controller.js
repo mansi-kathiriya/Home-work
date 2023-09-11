@@ -1,34 +1,34 @@
-const { categoryService } = require("../services");
+const { sub_categoryService } = require("../services");
 
-// create category
-const createCategory = async (req, res) => {
+// create sub-category
+const createsubCategory = async (req, res) => {
     try {
         const reqBody = req.body;
 
-        const categoryEx = await categoryService.getCategoryByName(reqBody.category_name);
-        if (categoryEx) {
-            throw new Error(`please add other category this ${categoryEx.category_name} category already created.`);
+        const subCategoryExists = await sub_categoryService.getsubCategoryByName(reqBody.sub_category_name);
+        if (subCategoryExists) {
+            throw new Error(`please add other sub-category this ${subCategoryExists.sub_category_name} sub-category already created.`);
         }
 
-        const Category = await categoryService.createCategory(reqBody);
+        const subCategory = await sub_categoryService.createsubCategory(reqBody);
 
         res.status(200).json({
             success: true,
-            message: "category create successfully!",
-            data: { Category }
+            message: "sub-category create successfully!",
+            data: { subCategory }
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message })
     }
 };
 
-//  Get user list
-const getCategoryList = async (req, res) => {
+//  Get sub-category list
+const getsubCategoryList = async (req, res) => {
     try {
-        const getList = await categoryService.getCategoryList();
+        const getList = await sub_categoryService.getsubCategoryList();
         res.status(200).json({
             success: true,
-            message: "Get category list successfully!",
+            message: "Get sub-category list successfully!",
             data: getList,
         });
     } catch (error) {
@@ -36,19 +36,19 @@ const getCategoryList = async (req, res) => {
     }
 };
 
-// get category details by id
-const getCategoryDetails = async (req, res) => {
+// get sub-category details by id
+const getsubCategoryDetails = async (req, res) => {
     try {
-        const getDetails = await categoryService.getCategoryById(
-            req.params.categoryId
+        const getDetails = await sub_categoryService.getsubCategoryById(
+            req.params.subcategoryId
         )
         if (!getDetails) {
-            throw new Error("Category not found!");
+            throw new Error("sub-Category not found!");
         }
 
         res.status(200).json({
             success: true,
-            message: "Category details get successfully!",
+            message: "sub-Category details get successfully!",
             data: getDetails,
         });
     } catch (error) {
@@ -56,44 +56,44 @@ const getCategoryDetails = async (req, res) => {
     }
 }
 
-// update category
+// update sub-category
 
-const updateCategory = async (req, res) => {
+const updatesubCategory = async (req, res) => {
     try {
-        const categoryId = req.params.categoryId;
+        const subcategoryId = req.params.subcategoryId;
 
-        const cateExists = await categoryService.getCategoryById(categoryId);
-        if (!cateExists) {
-            throw new Error("Category not found!")
+        const subCategoryExists = await sub_categoryService.getsubCategoryById(subcategoryId);
+        if (!subCategoryExists) {
+            throw new Error("sub-Category not found!")
         }
 
-        await categoryService.updateDetails(categoryId, req.body);
+        await sub_categoryService.updateDetails(subcategoryId, req.body);
 
         res.status(200).json({
             success: true,
-            message: "Category details update successfully!",
+            message: "sub-Category details update successfully!",
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message })
     }
 };
 
-// delete category
+// delete sub-category
 
 const deleteRecord = async (req, res) => {
     try {
-        const categoryId = req.params.categoryId;
+        const subcategoryId = req.params.subcategoryId;
 
-        const cateExists = await categoryService.getCategoryById(categoryId);
-        if (!cateExists) {
-            throw new Error("Category not found!")
+        const subCategoryExists = await sub_categoryService.getsubCategoryById(subcategoryId);
+        if (!subCategoryExists) {
+            throw new Error("sub-Category not found!")
         }
 
-        await categoryService.deleteCategory(categoryId);
+        await sub_categoryService.deletesubCategory(subcategoryId);
 
         res.status(200).json({
             success: true,
-            message: "Category delete successfully!",
+            message: "sub-Category delete successfully!",
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message })
@@ -101,9 +101,9 @@ const deleteRecord = async (req, res) => {
 }
 
 module.exports = {
-    createCategory,
-    getCategoryList,
-    getCategoryDetails,
-    updateCategory,
+    createsubCategory,
+    getsubCategoryList,
+    getsubCategoryDetails,
+    updatesubCategory,
     deleteRecord
 };

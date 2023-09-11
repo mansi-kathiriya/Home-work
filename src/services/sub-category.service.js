@@ -1,34 +1,34 @@
-const { Category } = require("../models");
+const { sub_Category } = require("../models");
 
-const createCategory = async (reqBody) => {
-  return Category.create(reqBody);
+const createsubCategory = async (reqBody) => {
+  return sub_Category.create(reqBody);
 };
 
-const getCategoryList = async (filter, options) => {
-  return Category.find({$or : [{ is_active: true }]})
+const getsubCategoryList = async (filter, options) => {
+  return sub_Category.find({$or : [{ is_active: true }]})
 };
 
-const getCategoryById = async(categoryId) => {
-  return Category.findById(categoryId);
+const getsubCategoryById = async(subcategoryId) => {
+  return sub_Category.findById(subcategoryId);
 }
 
-const updateDetails = async(categoryId, updateBody) => {
-  return Category.findByIdAndUpdate(categoryId, { $set: updateBody });
+const updateDetails = async(subcategoryId, updateBody) => {
+  return sub_Category.findByIdAndUpdate(subcategoryId, { $set: updateBody });
 }
 
-const deleteCategory = async (categoryId) => {
-  return Category.findByIdAndDelete(categoryId);
+const deletesubCategory = async (subcategoryId) => {
+  return sub_Category.findByIdAndDelete(subcategoryId);
 }
 
-const getCategoryByName = async (category_name) => {
-  return Category.findOne({ category_name });
+const getsubCategoryByName = async (sub_category_name) => {
+  return sub_Category.findOne({ sub_category_name });
 };
 
 module.exports = {
-  createCategory,
-  getCategoryList,
-  getCategoryById,
+  createsubCategory,
+  getsubCategoryList,
+  getsubCategoryById,
   updateDetails,
-  deleteCategory,
-  getCategoryByName
+  deletesubCategory,
+  getsubCategoryByName
 };

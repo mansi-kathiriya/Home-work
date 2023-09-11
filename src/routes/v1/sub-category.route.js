@@ -1,40 +1,39 @@
 const express = require("express");
-const { categoryValidation } = require("../../validations");
-const { categoryController } = require("../../controllers");
+const { sub_categoryValidation } = require("../../validations");
+const { sub_categoryController } = require("../../controllers");
 const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
-// create category
+// create sub-category
 router.post(
-  "/create-category",
-  validate(categoryValidation.createCategory),
-  categoryController.createCategory
+  "/create-subcategory",
+  validate(sub_categoryValidation.createsubCategory),
+  sub_categoryController.createsubCategory
 );
 
-// Get category list
+// Get sub-category list
 router.get(
-  "/list",
-  // validate(categoryValidation.getCategoryList),
-  categoryController.getCategoryList
+  "/subcategory-list",
+  sub_categoryController.getsubCategoryList
 );
 
-// get category details by id
+// get sub-category details by id
 router.get(
-  "/get-details/:categoryId",
-  categoryController.getCategoryDetails
+  "/get-details/:subcategoryId",
+  sub_categoryController.getsubCategoryDetails
 )
 
-// update category
+// update sub-category
 router.put(
-  "/update/:categoryId",
-  categoryController.updateCategory
+  "/subcategory-update/:subcategoryId",
+  sub_categoryController.updatesubCategory
 )
 
-// delete category
+// delete sub-category
 router.delete(
-  "/delete/:categoryId",
-  categoryController.deleteRecord
+  "/subcategory-delete/:subcategoryId",
+  sub_categoryController.deleteRecord
 )
 
 module.exports = router;

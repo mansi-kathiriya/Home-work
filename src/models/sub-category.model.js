@@ -1,14 +1,18 @@
 const mongoose = require("mongoose");
 
-const categorySchema = new mongoose.Schema(
+const subcategorySchema = new mongoose.Schema(
     {
-        category_name: {
+        sub_category_name: {
             type: String,
             trim: true,
         },
-        category_desc: {
+        sub_category_desc: {
             type: String,
             trim: true,
+        },
+        price : {
+            type: Number,
+            default: 0,
         },
         is_active: {
             type: Boolean,
@@ -21,6 +25,6 @@ const categorySchema = new mongoose.Schema(
     }
 );
 
-const Category = mongoose.model("category",categorySchema);
+const subCategory = mongoose.model("sub-category",subcategorySchema);
 
-module.exports = Category;
+module.exports = subCategory;

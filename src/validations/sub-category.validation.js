@@ -1,13 +1,14 @@
 const Joi = require("joi");
 
-// create Category
-const createCategory = {
+// create sub-Category
+const createsubCategory = {
     body: Joi.object().keys({
-        category_name: Joi.string().required().trim(),
-        category_desc: Joi.string().required().trim(),
+        sub_category_name: Joi.string().required().trim(),
+        sub_category_desc: Joi.string().required().trim(),
+        price: Joi.number().integer().required(),
     }),
 };
 
 module.exports = {
-    createCategory
+    createsubCategory
 };
