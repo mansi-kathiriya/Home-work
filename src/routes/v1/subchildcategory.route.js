@@ -1,39 +1,39 @@
 const express = require("express");
-const { productValidation } = require("../../validations");
-const { productController } = require("../../controllers");
+const { subchildcategoryValidation } = require("../../validations");
+const { subchildcategoryController } = require("../../controllers");
 const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
-// create Product
+// create subchildCategory
 router.post(
-  "/create-product",
-  validate(productValidation.createProduct),
-  productController.createProduct
+  "/create-subchildcategory",
+  validate(subchildcategoryValidation.createsubchildCategory),
+  subchildcategoryController.createsubchildCategory
 );
 
-// Get Product list
+// Get subchildCategory list
 router.get(
-  "/product-list",
-  productController.getProductList
+  "/subchildcategory-list",
+  subchildcategoryController.getsubchildCategoryList
 );
 
-// get Product details by id
+// get subchildCategory details by id
 router.get(
-  "/get-details/:productId",
-  productController.getProductDetails
+  "/get-details/:subchildcategoryId",
+  subchildcategoryController.getsubchildCategoryDetails
 )
 
-// update Product
+// update subchildCategory
 router.put(
-  "/update-product/:productId",
-  productController.updateProduct
+  "/update-subchildcategory/:subchildcategoryId",
+  subchildcategoryController.updatesubchildCategory
 )
 
-// delete Product
+// delete subchildCategory
 router.delete(
-  "/delete-product/:productId",
-  productController.deleteRecord
+  "/delete-subchildcategory/:subchildcategoryId",
+  subchildcategoryController.deleteRecord
 )
 
 module.exports = router;

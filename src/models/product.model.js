@@ -18,6 +18,14 @@ const productSchema = new mongoose.Schema(
             type: mongoose.Types.ObjectId,
             ref: "category"
         },
+        subcategory: {
+            type: mongoose.Types.ObjectId,
+            ref: "subCategory",
+        },
+        subchildcategory: {
+            type: mongoose.Types.ObjectId,
+            ref: "subchildCategory",
+        },
         is_active: {
             type: Boolean,
             default: true,

@@ -1,37 +1,39 @@
-const { Product } = require("../models");
+const { subchildCategory } = require("../models");
 
 
-//  Create Product
+//  Create subchildCategory
 
-const createProduct = async (reqBody) => {
-  return Product.create(reqBody);
+const createsubchildCategory = async (reqBody) => {
+  return subchildCategory.create(reqBody);
 };
 
-const getProductList = async (filter, options) => {
-  return Product.find().populate("category")
+const getsubchildCategoryList = async (filter, options) => {
+  return subchildCategory.find()
+  .populate("category")
+  .populate("subcategory")
 };
 
-const getProductById = async(productId) => {
-  return Product.findById(productId);
+const getsubchildCategoryById = async(subchildcategoryId) => {
+  return subchildCategory.findById(subchildcategoryId);
 }
 
-const updateDetails = async(productId, updateBody) => {
-  return Product.findByIdAndUpdate(productId, { $set: updateBody });
+const updateDetails = async(subchildcategoryId, updateBody) => {
+  return subchildCategory.findByIdAndUpdate(subchildcategoryId, { $set: updateBody });
 }
 
-const deleteProduct = async (productId) => {
-  return Product.findByIdAndDelete(productId);
+const deletesubchildCategory = async (subchildcategoryId) => {
+  return subchildCategory.findByIdAndDelete(subchildcategoryId);
 }
 
-const getProductByName = async (product_name) => {
-  return Product.findOne({ product_name })
+const getsubchildCategoryByName = async (subchildcategory_name) => {
+  return subchildCategory.findOne({ subchildcategory_name })
 };
 
 module.exports = {
-  createProduct,
-  getProductList,
-  getProductById,
+  createsubchildCategory,
+  getsubchildCategoryList,
+  getsubchildCategoryById,
   updateDetails,
-  deleteProduct,
-  getProductByName
+  deletesubchildCategory,
+  getsubchildCategoryByName
 };
