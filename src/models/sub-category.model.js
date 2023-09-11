@@ -4,7 +4,7 @@ const subcategorySchema = new mongoose.Schema(
     {
         category: {
             type: mongoose.Types.ObjectId,
-            ref: "Category",
+            ref: "category",
         },
         sub_category_name: {
             type: String,
@@ -29,6 +29,6 @@ const subcategorySchema = new mongoose.Schema(
     }
 );
 
-const subCategory = mongoose.model("sub-category", subcategorySchema);
+const subCategory = mongoose.model("subcategory", subcategorySchema);
 
 module.exports = subCategory;

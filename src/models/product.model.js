@@ -20,11 +20,11 @@ const productSchema = new mongoose.Schema(
         },
         subcategory: {
             type: mongoose.Types.ObjectId,
-            ref: "subCategory",
+            ref: "subcategory",
         },
         subchildcategory: {
             type: mongoose.Types.ObjectId,
-            ref: "subchildCategory",
+            ref: "subchildcategory",
         },
         is_active: {
             type: Boolean,

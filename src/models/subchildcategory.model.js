@@ -4,11 +4,11 @@ const subchildcategorySchema = new mongoose.Schema(
     {
         category: {
             type: mongoose.Types.ObjectId,
-            ref: "Category",
+            ref: "category",
         },
         subcategory: {
             type: mongoose.Types.ObjectId,
-            ref: "subCategory",
+            ref: "subcategory",
         },
         subchildcategory_name: {
             type: String,
