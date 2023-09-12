@@ -1,5 +1,5 @@
-const { string } = require("joi");
 const mongoose = require("mongoose");
+const config = require("../config/config")
 
 const productSchema = new mongoose.Schema(
     {

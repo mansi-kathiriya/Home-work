@@ -10,8 +10,8 @@ const createProduct = async (reqBody) => {
 const getProductList = async (filter, options) => {
   return Product.find()
   .populate("category")
-  .populate("subchildcategory")
   .populate("subcategory")
+  .populate("subchildcategory")
 };
 
 const getProductById = async(productId) => {
