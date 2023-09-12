@@ -1,3 +1,4 @@
+const { string } = require("joi");
 const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema(
@@ -9,6 +10,11 @@ const productSchema = new mongoose.Schema(
         product_desc: {
             type: String,
             trim: true,
+        },
+        product_image: {
+            type: String,
+            trim: true,
+
         },
         price: {
             type: Number,
@@ -34,6 +40,13 @@ const productSchema = new mongoose.Schema(
     {
         timestamps: true,
         versionKey: false,
+        toJSON: {
+            transform: function (doc, data) {
+                if(data?.product_image){
+                    data.product_image = `${config.base_url}product_image/${data.product_image}`;
+                }
+            },
+        },
     }
 );
 
