@@ -24,5 +24,6 @@ module.exports = {
             useNewUrlparser: true,
             useUnifiedTopology: true,
         }
-    }
+    },
+    base_url: envVars.BASE_URL
 }
