@@ -4,16 +4,16 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const envVarsSchema = Joi.object({
-    PORT : Joi.number().default(3000),
-    MONGODB_URL : Joi.string().trim().description("mongodb url"),
+    PORT: Joi.number().default(3000),
+    MONGODB_URL: Joi.string().trim().description("mongodb url"),
 }).unknown();
 
-const { value: envVars,error } = envVarsSchema
-    .prefs({ error: { label: "key" } })
+const { value: envVars, error } = envVarsSchema
+    .prefs({ errors: { label: "key" } })
     .validate(process.env)
 
-if(error){
-    console.log("config Error: ",error);
+if (error) {
+    console.log("config Error: ", error);
 }
 
 module.exports = {
