@@ -1,0 +1,1 @@
+module.exports.imageValidation = require("./image.validation")
