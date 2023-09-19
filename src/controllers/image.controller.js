@@ -12,7 +12,7 @@ const createImage = async (req, res) => {
         }
 
         const Image = await imageService.createImage(reqBody);
-        if (Image) {
+        if (!Image) {
             throw new Error("please add other Image this Image already created.");
         }
 
