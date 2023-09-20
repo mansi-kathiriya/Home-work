@@ -37,8 +37,8 @@ router.put(
 
 // delete Product
 router.delete(
-  auth(),
   "/delete-product/:productId",
+  auth(),
   productController.deleteRecord
 )
 
