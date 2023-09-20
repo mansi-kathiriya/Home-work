@@ -3,6 +3,7 @@ const { upload } = require("../../middlewares/upload")
 const { productValidation } = require("../../validations");
 const { productController } = require("../../controllers");
 const validate = require("../../middlewares/validate");
+const auth = require("../../middlewares/auth")
 
 const router = express.Router();
 
@@ -17,6 +18,7 @@ router.post(
 // Get Product list
 router.get(
   "/product-list",
+  auth(),
   productController.getProductList
 );
 
@@ -29,11 +31,13 @@ router.get(
 // update Product
 router.put(
   "/update-product/:productId",
+  auth(),
   productController.updateProduct
 )
 
 // delete Product
 router.delete(
+  auth(),
   "/delete-product/:productId",
   productController.deleteRecord
 )
